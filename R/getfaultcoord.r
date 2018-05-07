@@ -5,6 +5,7 @@
 #' @param faultlines a spatial data frame of fault.
 #' @param id ID from fault.
 #' @param c.id Column name of the fault id.
+#' @param c.fault.top Column name of depth of top of fault(km).
 #' @param c.fault.thick Column name of the fault thick(km) (seismogenic thickness).
 #' @param c.dip Column name of the fault dip(degree).
 #'
@@ -14,23 +15,24 @@
 #' getfaultcoord(FT, 1, "ID", "WIDTH_KM", "FAULT_DIP1")
 #'
 #' @export
-getfaultcoord <- function(faultlines, id, c.id, c.fault.thick, c.dip){
+getfaultcoord <- function(faultlines, id, c.id, c.fault.top, c.fault.thick, c.dip){
   # fixed the R CMD Check
   ft <- NULL
   dip <- NULL
   faultwidth <- NULL
 
+  # select the fault with id
+  eval(parse(text=paste0("ft <- subset(faultlines, ",c.id, " == ",id,")")))
+
   # set parameters
   MAX_FLT = 1
   MAX_DD = 12
   MAX_SEG = 300
+  eval(parse(text=paste0("ft.top <- ft$",c.fault.top)))
   # set array for data
   fLong <- array(0, c(MAX_FLT,MAX_DD,MAX_SEG))
   fLat <- array(0, c(MAX_FLT,MAX_DD,MAX_SEG))
-  fZ <- array(0, c(MAX_FLT,MAX_DD,MAX_SEG))
-
-  # select the fault with id
-  eval(parse(text=paste0("ft <- subset(faultlines, ",c.id, " == ",id,")")))
+  fZ <- array(ft.top, c(MAX_FLT,MAX_DD,MAX_SEG))
 
   # get coordinate of fault line
   pt.line <- length(ft@lines[[1]]@Lines[[1]]@coords[,1])

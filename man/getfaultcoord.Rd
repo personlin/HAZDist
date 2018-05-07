@@ -4,7 +4,7 @@
 \alias{getfaultcoord}
 \title{Function for get fault coordinates from spatial data.frame.}
 \usage{
-getfaultcoord(faultlines, id, c.id, c.fault.thick, c.dip)
+getfaultcoord(faultlines, id, c.id, c.fault.top, c.fault.thick, c.dip)
 }
 \arguments{
 \item{faultlines}{a spatial data frame of fault.}
@@ -12,6 +12,8 @@ getfaultcoord(faultlines, id, c.id, c.fault.thick, c.dip)
 \item{id}{ID from fault.}
 
 \item{c.id}{Column name of the fault id.}
+
+\item{c.fault.top}{Column name of depth of top of fault(km).}
 
 \item{c.fault.thick}{Column name of the fault thick(km) (seismogenic thickness).}
 
