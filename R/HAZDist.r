@@ -6,7 +6,7 @@
 #'
 #' @docType package
 #' @name HAZDist
-#' @useDynLib HAZDist
+#' @useDynLib HAZDist, .registration = TRUE
 #' @param libpath library path
 
 .onUnload <- function(libpath){

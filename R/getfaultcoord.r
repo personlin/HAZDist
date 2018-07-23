@@ -12,7 +12,7 @@
 #' @return A list will be return, including dip, faultwidth, fZ(,), fLat(,), fLong(,), nDD, pt.line.
 #'
 #' @examples
-#' getfaultcoord(FT, 1, "ID", "WIDTH_KM", "FAULT_DIP1")
+#' getfaultcoord(FT, 1, "ID", "DEPTH1_KM", "WIDTH_KM", "FAULT_DIP1")
 #'
 #' @export
 getfaultcoord <- function(faultlines, id, c.id, c.fault.top, c.fault.thick, c.dip){
@@ -49,7 +49,7 @@ getfaultcoord <- function(faultlines, id, c.id, c.fault.top, c.fault.thick, c.di
   nfp = c(pt.line,0)
   nDD = c(1,0)
 
-  retvals <- .Fortran("SetFltBottom", iCoor=as.integer(1), iFlt=as.integer(1), nfp=as.integer(nfp),
+  retvals <- .Fortran("SetFltBottom_f", iCoor=as.integer(1), iFlt=as.integer(1), nfp=as.integer(nfp),
                       dip2=as.single(dip), faultThick=as.single(faultwidth),
                       fZ=as.single(fZ), flat=as.single(fLat), flong=as.single(fLong),
                       nDD=as.integer(nDD))

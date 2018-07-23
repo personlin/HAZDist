@@ -58,7 +58,7 @@ ConvertCoordinates2 <- function(siteX, siteY, ft.Z, ft.Lat, ft.Long, nDD, pt.lin
   fLat[1,1:nDD,1:pt.line] <- ft.Lat
   fZ[1,1:nDD,1:pt.line] <- ft.Z
 
-  retvals <- .Fortran("ConvertCoordinates2", PACKAGE = "HAZDist", nfp=as.integer(nfp), iFlt=as.integer(iflt), iCoor=as.integer(icoor),
+  retvals <- .Fortran("ConvertCoordinates2_f", nfp=as.integer(nfp), iFlt=as.integer(iflt), iCoor=as.integer(icoor),
                       grid_n=as.integer(grid_n), sourceType=as.integer(sourcetype), nDD=as.integer(nDD),
                       siteX=as.single(siteX), siteY=as.single(siteY),
                       fLat=as.single(fLat), fLong=as.single(fLong), fZ=as.single(fZ),

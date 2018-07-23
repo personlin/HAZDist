@@ -41,7 +41,7 @@ SetFltBottom <- function(dip, faultwidth, ft.Z, ft.Lat, ft.Long, pt.line){
   fLat[1,1,1:pt.line] <- ft.Lat
   fZ[1,1,1:pt.line] <- ft.Z
 
-  retvals <- .Fortran("SetFltBottom", PACKAGE = "HAZDist", iCoor=as.integer(icoor), iFlt=as.integer(iflt), nfp=as.integer(nfp),
+  retvals <- .Fortran("SetFltBottom_f", iCoor=as.integer(icoor), iFlt=as.integer(iflt), nfp=as.integer(nfp),
                       dip2=as.single(dip), faultThick=as.single(faultwidth),
                       fZ=as.single(fZ), flat=as.single(fLat), flong=as.single(fLong),
                       nDD=as.integer(nDD))

@@ -11,7 +11,7 @@
 #'
 #' @examples
 #' site <- data.frame(x=121.001, y=24.7794)
-#' fault <- getfaultcoord(FT, 1, "ID", "WIDTH_KM", "FAULT_DIP1")
+#' fault <- getfaultcoord(FT, 1, "ID", "DEPTH1_KM", "WIDTH_KM", "FAULT_DIP1")
 #' getfaultdist(fault, site, seismoDepth=0)
 #'
 #'

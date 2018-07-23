@@ -113,7 +113,7 @@ CalcDist <- function(faultW, faultLen, seismoDepth=0, ft.fltGrid_x, ft.fltGrid_y
   fltGrid_Rrup[1:nFltGrid[1],1:nFltGrid[2]]=ft.fltGrid_Rrup
   fltGrid_Rjb[1:nFltGrid[1],1:nFltGrid[2]] =ft.fltGrid_Rjb
 
-  retvals <- .Fortran("CalcDist", PACKAGE = "HAZDist", sourceType=as.integer(sourcetype), pscorflag=as.integer(1), nFltGrid=as.integer(nFltGrid),
+  retvals <- .Fortran("CalcDist_f", sourceType=as.integer(sourcetype), pscorflag=as.integer(1), nFltGrid=as.integer(nFltGrid),
                       n1AS=as.integer(1), iLocX=as.integer(1), iLocY=as.integer(1), n2AS=as.integer(nFltGrid[2]),
                       iFltWidth=as.integer(1), iFlt=as.integer(1), iMag=as.integer(1),
                       ystep=as.single(ystep), grid_top=as.single(grid_top), RupWidth=as.single(RupWidth), RupLen=as.single(RupLen),

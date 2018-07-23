@@ -26,6 +26,6 @@ A list will be return, including dip, faultwidth, fZ(,), fLat(,), fLong(,), nDD,
 \code{getfaultcoord} returns coordinates of fault from spatial data frame.
 }
 \examples{
-getfaultcoord(FT, 1, "ID", "WIDTH_KM", "FAULT_DIP1")
+getfaultcoord(FT, 1, "ID", "DEPTH1_KM", "WIDTH_KM", "FAULT_DIP1")
 
 }

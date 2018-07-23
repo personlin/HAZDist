@@ -1,7 +1,7 @@
 Package: HAZDist
 Type: Package
 Title: Distance calculation funciton using Norman Abrahamson's HAZ fortran code
-Version: 0.1.6
+Version: 0.1.7
 Author: Person Lin
 Maintainer: Person Lin <personlin@gmail.com>
 Depends: R (>= 3.1.0)

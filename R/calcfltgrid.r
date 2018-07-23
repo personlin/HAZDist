@@ -70,7 +70,7 @@ calcfltgrid <- function(ft.xFlt, ft.yFlt, ft.zFlt, x0=0, y0=0, z0=0, xstep=1.0){
   fltGrid_y4=array(0, c(MAXFLT_DD,MAXFLT_AS))
   fltGrid_z4=array(0, c(MAXFLT_DD,MAXFLT_AS))
 
-  retvals <- .Fortran("calcFltGrid", PACKAGE = "HAZDist", xFlt=as.single(xFlt), yFlt=as.single(yFlt), zFlt=as.single(zFlt),
+  retvals <- .Fortran("calcFltGrid_f", xFlt=as.single(xFlt), yFlt=as.single(yFlt), zFlt=as.single(zFlt),
                       npts=as.integer(npts), nDD=as.integer(nDD),
                       fltGrid_x=as.single(fltGrid_x), fltGrid_y=as.single(fltGrid_y), fltGrid_z=as.single(fltGrid_z),
                       nfltGrid=as.integer(c(0,0)), fltGrid_a=as.single(fltGrid_a),
