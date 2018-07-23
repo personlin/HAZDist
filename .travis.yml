@@ -4,5 +4,10 @@ language: R
 sudo: false
 cache: packages
 warnings_are_errors: false
+addons:
+  apt:
+    packages:
+      - libgdal-dev
+      - libproj-dev
 r_packages: rgdal
 r_github_packages: personlin/GMPEhaz
