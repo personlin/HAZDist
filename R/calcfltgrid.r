@@ -76,7 +76,7 @@ calcfltgrid <- function(ft.xFlt, ft.yFlt, ft.zFlt, x0=0, y0=0, z0=0, xstep=1.0){
                       nfltGrid=as.integer(c(0,0)), fltGrid_a=as.single(fltGrid_a),
                       fltGrid_w=as.single(fltGrid_w),
                       x0=as.single(0), y0=as.single(0), z0=as.single(0),
-                      fltGrid_Rrup=as.single(fltGrid_Rrup), fltGrid_Rjb=as.single(fltGrid_Rrup),
+                      fltGrid_Rrup=as.single(fltGrid_Rrup), fltGrid_Rjb=as.single(fltGrid_Rjb),
                       faultArea=as.single(0), faultLen=as.single(0), faultW=as.single(0),
                       step=as.single(step), fltGrid_fLen=as.single(fltGrid_fLen),
                       fltGrid_x1=as.single(fltGrid_x1), fltGrid_y1=as.single(fltGrid_y1), fltGrid_z1=as.single(fltGrid_z1),
