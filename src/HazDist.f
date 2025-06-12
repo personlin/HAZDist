@@ -155,7 +155,7 @@ C         for this rupture area since it is needed for the NGA directivity model
           do j=iLocX,n2
             do i=iLocY,n1
               if (distRup .gt. fltgrid_Rrup(i,j)) then
-                distRup = fltgrid_rRup(i,j)
+                distRup = fltgrid_Rrup(i,j)
                 icellRupstrike = j
                 icellRupdip = i
               endif
