@@ -54,11 +54,11 @@ CalcDist(faultW, faultLen, seismoDepth = 0, ft.fltGrid_x, ft.fltGrid_y,
 \item{ystep}{ystep in fault input file.}
 }
 \value{
-A list will be return, includingHWFlag, hypoDepth, ZTOR, RupWidth, RupLen, seismoDepth,
+A list will be returned, includingHWFlag, hypoDepth, ZTOR, RupWidth, RupLen, seismoDepth,
 distJB, distRup, distSeism, distepi, disthypo, Rx, Ry, Ry0.
 }
 \description{
-\code{CalcDist} returns the computes the distance parameters for the GMPEs.
+\code{CalcDist} computes the distance parameters for the GMPEs.
                 (e.g. Rjb, Rrup, ZTOR, Rx, Ry, Ry0)
 }
 \examples{
