@@ -1,6 +1,6 @@
 #' Distance calculation function from Norman Abrahamson's HAZ program.
 #'
-#' \code{CalcDist} returns the computes the distance parameters for the GMPEs.
+#' \code{CalcDist} computes the distance parameters for the GMPEs.
 #'                 (e.g. Rjb, Rrup, ZTOR, Rx, Ry, Ry0)
 #'
 #' @param faultW Fault width
@@ -25,7 +25,7 @@
 #' @param ft.fltGrid_Rjb Fault grid JB distance.
 #' @param ystep ystep in fault input file.
 #'
-#' @return A list will be return, includingHWFlag, hypoDepth, ZTOR, RupWidth, RupLen, seismoDepth,
+#' @return A list will be returned, includingHWFlag, hypoDepth, ZTOR, RupWidth, RupLen, seismoDepth,
 #' distJB, distRup, distSeism, distepi, disthypo, Rx, Ry, Ry0.
 #'
 #' @examples
