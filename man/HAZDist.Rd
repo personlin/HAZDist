@@ -5,7 +5,7 @@
 \alias{HAZDist}
 \alias{.onUnload}
 \alias{HAZDist-package}
-\title{HAZDist: Distance calculation funciton using Norman Abrahamson's HAZ fortran code.}
+\title{HAZDist: Distance calculation function using Norman Abrahamson's HAZ fortran code.}
 \usage{
 .onUnload(libpath)
 }

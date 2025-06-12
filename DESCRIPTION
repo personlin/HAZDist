@@ -1,12 +1,12 @@
 Package: HAZDist
 Type: Package
-Title: Distance calculation funciton using Norman Abrahamson's HAZ fortran code
+Title: Distance calculation function using Norman Abrahamson's HAZ fortran code
 Version: 0.1.7
 Author: Person Lin
 Maintainer: Person Lin <personlin@gmail.com>
 Depends: R (>= 3.1.0)
 SystemRequirements: GNU make
-Description: This package provide a set of R warp function to call distance calcualtion function
+Description: This package provide a set of R wrap function to call distance calculation function
     from Norman Abrahamson's HAZ fortran code for using in GMPE.
 License: GPL (>= 3)
 Encoding: UTF-8
