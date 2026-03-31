@@ -18,4 +18,3 @@ LazyDataCompression: xz
 URL: https://github.com/personlin/HAZDist
 BugReports: https://github.com/personlin/HAZDist/issues
 RoxygenNote: 7.3.3
-Suggests: GMPEhaz
