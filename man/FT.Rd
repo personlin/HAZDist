@@ -4,7 +4,8 @@
 \name{FT}
 \alias{FT}
 \title{Fault spatial data frame.}
-\format{A spatial data frame of Shanchiao fault :
+\format{
+An \code{sf} object (LINESTRING geometry) representing the Shanchiao fault:
 \describe{
   \item{FAULT_NAME}{fault name}
   \item{FAULT_TYPE}{fault type}
@@ -13,7 +14,8 @@
   \item{DEPTH1_KM}{fault depth}
   \item{WIDTH_KM}{fault width}
   ...
-}}
+}
+}
 \usage{
 FT
 }

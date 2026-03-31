@@ -3,16 +3,21 @@
 \docType{package}
 \name{HAZDist}
 \alias{HAZDist}
-\alias{.onUnload}
 \alias{HAZDist-package}
 \title{HAZDist: Distance calculation function using Norman Abrahamson's HAZ fortran code.}
-\usage{
-.onUnload(libpath)
-}
-\arguments{
-\item{libpath}{library path}
-}
 \description{
 The HAZDist package provides distance calculation functions:
 SetFltBottom, ConvertCoordinates2, calcfltgrid, CalcDist, getfaultcoord, getfaultdist
+}
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/personlin/HAZDist}
+  \item Report bugs at \url{https://github.com/personlin/HAZDist/issues}
+}
+
+}
+\author{
+\strong{Maintainer}: Person Lin \email{personlin@gmail.com}
+
 }

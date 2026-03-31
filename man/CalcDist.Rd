@@ -4,11 +4,29 @@
 \alias{CalcDist}
 \title{Distance calculation function from Norman Abrahamson's HAZ program.}
 \usage{
-CalcDist(faultW, faultLen, seismoDepth = 0, ft.fltGrid_x, ft.fltGrid_y,
-  ft.fltGrid_z, ft.fltGrid_x1, ft.fltGrid_y1, ft.fltGrid_z1, ft.fltGrid_x2,
-  ft.fltGrid_y2, ft.fltGrid_z2, ft.fltGrid_x3, ft.fltGrid_y3, ft.fltGrid_z3,
-  ft.fltGrid_x4, ft.fltGrid_y4, ft.fltGrid_z4, ft.fltGrid_Rrup, ft.fltGrid_Rjb,
-  ystep = 1)
+CalcDist(
+  faultW,
+  faultLen,
+  seismoDepth = 0,
+  ft.fltGrid_x,
+  ft.fltGrid_y,
+  ft.fltGrid_z,
+  ft.fltGrid_x1,
+  ft.fltGrid_y1,
+  ft.fltGrid_z1,
+  ft.fltGrid_x2,
+  ft.fltGrid_y2,
+  ft.fltGrid_z2,
+  ft.fltGrid_x3,
+  ft.fltGrid_y3,
+  ft.fltGrid_z3,
+  ft.fltGrid_x4,
+  ft.fltGrid_y4,
+  ft.fltGrid_z4,
+  ft.fltGrid_Rrup,
+  ft.fltGrid_Rjb,
+  ystep = 1
+)
 }
 \arguments{
 \item{faultW}{Fault width}

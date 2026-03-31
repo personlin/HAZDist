@@ -129,7 +129,8 @@ CalcDist <- function(faultW, faultLen, seismoDepth=0, ft.fltGrid_x, ft.fltGrid_y
                       icellRupdip=as.integer(1),
                       hypoDepth=as.single(0), distJB=as.single(0), distRup=as.single(0), ZTOR=as.single(0),
                       distSeismo=as.single(0), distepi=as.single(0), disthypo=as.single(0), dipavgd=as.single(0),
-                      Rx=as.single(0), Ry=as.single(0), Ry0=as.single(0))
+                      Rx=as.single(0), Ry=as.single(0), Ry0=as.single(0),
+                      PACKAGE = "HAZDist")
   names(retvals) <- c("sourceType", "pscorflag", "nFltGrid", "n1AS", "iLocX", "iLocY", "n2AS", "iFltWidth",
                       "iFlt", "iMag", "ystep", "grid_top", "RupWidth", "RupLen", "r_horiz", "seismoDepth",
                       "fltgrid_x", "fltgrid_y", "fltgrid_z", "fltgrid_x1", "fltgrid_y1", "fltgrid_z1",

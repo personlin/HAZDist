@@ -1,1 +1,4 @@
-PKG_FFLAGS = '-ffixed-line-length-132'
+# Detect gfortran and apply flags required for HazDist.f legacy Fortran code
+# -ffixed-line-length-132: allow source lines up to 132 columns
+# -std=legacy:             accept Fortran 77 deleted features without warnings
+PKG_FFLAGS = $(shell echo "$(FC)" | grep -q gfortran && echo -ffixed-line-length-132 -std=legacy)

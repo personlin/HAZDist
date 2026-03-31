@@ -66,7 +66,8 @@ ConvertCoordinates2 <- function(siteX, siteY, ft.Z, ft.Lat, ft.Long, nDD, pt.lin
                       grid_dlat=as.single(grid_dlat), grid_dlong=as.single(grid_dlong), nPts1=as.integer(nPts1),
                       xFlt=as.single(xFlt), yFlt=as.single(yFlt), zFlt=as.single(zFlt),
                       grid_x=as.single(0), grid_y=as.single(0), grid_dx=as.single(0), grid_dy=as.single(0),
-                      x0=as.single(0), y0=as.single(0), z0=as.single(0))
+                      x0=as.single(0), y0=as.single(0), z0=as.single(0),
+                      PACKAGE = "HAZDist")
   names(retvals) <- c("nfp", "iFlt", "iCoor", "grid_n", "sourceType", "nDD",
                       "siteX", "siteY", "fLat", "fLong", "fZ", "grid_lat", "grid_long",
                       "grid_dlat", "grid_dlong", "nPts1", "xFlt", "yFlt", "zFlt", "grid_x", "grid_y",

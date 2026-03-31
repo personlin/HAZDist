@@ -2,7 +2,7 @@
 #'
 #' \code{getfaultcoord} returns coordinates of fault from spatial data frame.
 #'
-#' @param faultlines a spatial data frame of fault.
+#' @param faultlines an \code{sf} object containing fault lines.
 #' @param id ID from fault.
 #' @param c.id Column name of the fault id.
 #' @param c.fault.top Column name of depth of top of fault(km).
@@ -11,40 +11,36 @@
 #'
 #' @return A list will be return, including dip, faultwidth, fZ(,), fLat(,), fLong(,), nDD, pt.line.
 #'
+#' @importFrom sf st_coordinates
+#'
 #' @examples
 #' getfaultcoord(FT, 1, "ID", "DEPTH1_KM", "WIDTH_KM", "FAULT_DIP1")
 #'
 #' @export
 getfaultcoord <- function(faultlines, id, c.id, c.fault.top, c.fault.thick, c.dip){
-  # fixed the R CMD Check
-  ft <- NULL
-  dip <- NULL
-  faultwidth <- NULL
 
   # select the fault with id
-  eval(parse(text=paste0("ft <- subset(faultlines, ",c.id, " == ",id,")")))
+  ft <- faultlines[faultlines[[c.id]] == id, ]
 
   # set parameters
   MAX_FLT = 1
   MAX_DD = 12
   MAX_SEG = 300
-  eval(parse(text=paste0("ft.top <- ft$",c.fault.top)))
+  ft.top <- ft[[c.fault.top]]
   # set array for data
   fLong <- array(0, c(MAX_FLT,MAX_DD,MAX_SEG))
   fLat <- array(0, c(MAX_FLT,MAX_DD,MAX_SEG))
   fZ <- array(ft.top, c(MAX_FLT,MAX_DD,MAX_SEG))
 
   # get coordinate of fault line
-  pt.line <- length(ft@lines[[1]]@Lines[[1]]@coords[,1])
-  fLong[1,1,1:pt.line] <- ft@lines[[1]]@Lines[[1]]@coords[,1]
-  fLat[1,1,1:pt.line] <- ft@lines[[1]]@Lines[[1]]@coords[,2]
+  coords <- sf::st_coordinates(ft)
+  pt.line <- nrow(coords)
+  fLong[1,1,1:pt.line] <- coords[, "X"]
+  fLat[1,1,1:pt.line] <- coords[, "Y"]
 
   # get fault parameters
-  ft.data <- ft@data
-  eval(parse(text=paste0("faultwidth <- ft.data$",c.fault.thick)))
-  #faultwidth <- ft@data$WIDTH_KM[1]
-  eval(parse(text=paste0("dip <- ft.data$",c.dip)))
-  #dip <- ft@data$FAULT_DIP1[1]
+  faultwidth <- ft[[c.fault.thick]]
+  dip <- ft[[c.dip]]
 
   nfp = c(pt.line,0)
   nDD = c(1,0)
@@ -52,7 +48,7 @@ getfaultcoord <- function(faultlines, id, c.id, c.fault.top, c.fault.thick, c.di
   retvals <- .Fortran("SetFltBottom_f", iCoor=as.integer(1), iFlt=as.integer(1), nfp=as.integer(nfp),
                       dip2=as.single(dip), faultThick=as.single(faultwidth),
                       fZ=as.single(fZ), flat=as.single(fLat), flong=as.single(fLong),
-                      nDD=as.integer(nDD))
+                      nDD=as.integer(nDD), PACKAGE = "HAZDist")
   names(retvals) <- c("iCoor", "iFlt", "nfp", "dip", "faultwidth", "fZ", "fLat", "fLong", "nDD")
   retvals$iCoor <- NULL
   retvals$iFlt <- NULL

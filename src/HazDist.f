@@ -425,7 +425,7 @@ c -----------------------------
 
 c     declarations passed in
       integer nSeg
-      real xSeg(1), ySeg(1), x0, y0
+      real xSeg(*), ySeg(*), x0, y0
 
 c     declarations passed out
       integer insideFlag
@@ -1427,12 +1427,10 @@ c           Set coordinates of center of grid and width and area of grid
               i2 = i1 + i0
 
               if ( j2 .gt. MAXFLT_AS ) then
-                write (*,'( 2x,''Error: increase dimension of MAXFLT_AS'')')
-                stop 99
+                call rexit('calcFltGrid: j2 > MAXFLT_AS; increase array dimension')
               endif
               if ( i2 .gt. MAXFLT_DD ) then
-                write (*,'( 2x,''Error: increase dimension of MAXFLT_DD'')')
-                stop 99
+                call rexit('calcFltGrid: i2 > MAXFLT_DD; increase array dimension')
               endif
 
 c             these cell coordinates are for the center point
@@ -1624,7 +1622,7 @@ c     where A is m1 x n1  and  B is m2 x n2
       INTEGER arow, brow, crow, m1, m2, n1, n2, i, j, ii
       double precision a(arow,1), b(brow,1), c(crow,1)
 
-      if (n1 .ne. m2) stop 99
+      if (n1 .ne. m2) call rexit('mult: matrix dimension mismatch (n1 /= m2)')
       do 100 i=1,m1
         do 90 j=1,n2
           c(i,j) = 0.0
@@ -1675,7 +1673,6 @@ C
 C
 C     ..... IS N LARGER THAN 78 .....
       IF ( N.LE.78 )  GO TO 5
-      WRITE (6,200)
       DETER = 0.
       RETURN
 C
@@ -1771,9 +1768,6 @@ C
 C     ..... RETURN FOR INDIC NEGATIVE OR ZERO .....
 c     DETER = DETER
       RETURN
-C
-C     ..... FORMAT FOR OUTPUT STATEMENT .....
- 200  FORMAT( 10H0N TOO BIG )
 C
       END
 

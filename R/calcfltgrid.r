@@ -15,12 +15,13 @@
 #' fltGrid_Rrup, fltGrid_Rjb
 #'
 #' @examples
-#' calcfltgrid(ft.xFlt=t(array(c(-8.214971, -7.930996, -2.216696, 15.31437, 22.89828, 24.87581,
-#'                       -1.370474, -1.087678,  4.623962, 22.15565, 29.74227, 31.71796), c(6,2))),
-#'             ft.yFlt=t(array(c(-0.8335323,  4.558042, 15.116348, 27.63519, 32.26784, 34.74363,
-#'                       -7.2026749, -1.810954,  8.750206, 21.27779, 25.91442, 28.39125), c(6,2))),
-#'             ft.zFlt=(array(c( 0.00,  0.00,  0.00,  0.00,  0.00,  0.00,
-#'                       16.17, 16.17, 16.17, 16.17, 16.17, 16.17), c(6,2))), x0=0, y0=0, z0=0, xstep=1.0)
+#' xFlt <- t(array(c(-8.214971, -7.930996, -2.216696, 15.31437, 22.89828, 24.87581,
+#'                   -1.370474, -1.087678,  4.623962, 22.15565, 29.74227, 31.71796), c(6,2)))
+#' yFlt <- t(array(c(-0.8335323,  4.558042, 15.116348, 27.63519, 32.26784, 34.74363,
+#'                   -7.2026749, -1.810954,  8.750206, 21.27779, 25.91442, 28.39125), c(6,2)))
+#' zFlt <- array(c(0.00, 0.00, 0.00, 0.00, 0.00, 0.00,
+#'                 16.17, 16.17, 16.17, 16.17, 16.17, 16.17), c(6,2))
+#' calcfltgrid(ft.xFlt=xFlt, ft.yFlt=yFlt, ft.zFlt=zFlt, x0=0, y0=0, z0=0, xstep=1.0)
 #'
 #' @export
 calcfltgrid <- function(ft.xFlt, ft.yFlt, ft.zFlt, x0=0, y0=0, z0=0, xstep=1.0){
@@ -82,7 +83,8 @@ calcfltgrid <- function(ft.xFlt, ft.yFlt, ft.zFlt, x0=0, y0=0, z0=0, xstep=1.0){
                       fltGrid_x1=as.single(fltGrid_x1), fltGrid_y1=as.single(fltGrid_y1), fltGrid_z1=as.single(fltGrid_z1),
                       fltGrid_x2=as.single(fltGrid_x2), fltGrid_y2=as.single(fltGrid_y2), fltGrid_z2=as.single(fltGrid_z2),
                       fltGrid_x3=as.single(fltGrid_x3), fltGrid_y3=as.single(fltGrid_y3), fltGrid_z3=as.single(fltGrid_z3),
-                      fltGrid_x4=as.single(fltGrid_x4), fltGrid_y4=as.single(fltGrid_y4), fltGrid_z4=as.single(fltGrid_z4))
+                      fltGrid_x4=as.single(fltGrid_x4), fltGrid_y4=as.single(fltGrid_y4), fltGrid_z4=as.single(fltGrid_z4),
+                      PACKAGE = "HAZDist")
   names(retvals) <- c("xFlt", "yFlt", "zFlt", "npts", "nDD", "fltGrid_x", "fltGrid_y",
                       "fltGrid_z", "nfltGrid", "fltGrid_a", "fltGrid_w", "x0", "y0", "z0",
                       "fltGrid_Rrup", "fltGrid_Rjb", "faultArea", "faultLen", "faultW",

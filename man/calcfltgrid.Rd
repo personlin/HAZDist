@@ -4,8 +4,7 @@
 \alias{calcfltgrid}
 \title{Function for converting fault into grid from Norman Abrahamson's HAZ program.}
 \usage{
-calcfltgrid(ft.xFlt, ft.yFlt, ft.zFlt, x0 = 0, y0 = 0, z0 = 0,
-  xstep = 1)
+calcfltgrid(ft.xFlt, ft.yFlt, ft.zFlt, x0 = 0, y0 = 0, z0 = 0, xstep = 1)
 }
 \arguments{
 \item{ft.xFlt}{Fault grid x(nDD, npt), Numeric.}
@@ -31,11 +30,12 @@ fltGrid_Rrup, fltGrid_Rjb
 \code{calcfltgrid} returns xyz.
 }
 \examples{
-calcfltgrid(ft.xFlt=t(array(c(-8.214971, -7.930996, -2.216696, 15.31437, 22.89828, 24.87581,
-                      -1.370474, -1.087678,  4.623962, 22.15565, 29.74227, 31.71796), c(6,2))),
-            ft.yFlt=t(array(c(-0.8335323,  4.558042, 15.116348, 27.63519, 32.26784, 34.74363,
-                      -7.2026749, -1.810954,  8.750206, 21.27779, 25.91442, 28.39125), c(6,2))),
-            ft.zFlt=(array(c( 0.00,  0.00,  0.00,  0.00,  0.00,  0.00,
-                      16.17, 16.17, 16.17, 16.17, 16.17, 16.17), c(6,2))), x0=0, y0=0, z0=0, xstep=1.0)
+xFlt <- t(array(c(-8.214971, -7.930996, -2.216696, 15.31437, 22.89828, 24.87581,
+                  -1.370474, -1.087678,  4.623962, 22.15565, 29.74227, 31.71796), c(6,2)))
+yFlt <- t(array(c(-0.8335323,  4.558042, 15.116348, 27.63519, 32.26784, 34.74363,
+                  -7.2026749, -1.810954,  8.750206, 21.27779, 25.91442, 28.39125), c(6,2)))
+zFlt <- array(c(0.00, 0.00, 0.00, 0.00, 0.00, 0.00,
+                16.17, 16.17, 16.17, 16.17, 16.17, 16.17), c(6,2))
+calcfltgrid(ft.xFlt=xFlt, ft.yFlt=yFlt, ft.zFlt=zFlt, x0=0, y0=0, z0=0, xstep=1.0)
 
 }

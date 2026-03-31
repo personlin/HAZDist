@@ -7,7 +7,7 @@
 getfaultcoord(faultlines, id, c.id, c.fault.top, c.fault.thick, c.dip)
 }
 \arguments{
-\item{faultlines}{a spatial data frame of fault.}
+\item{faultlines}{an \code{sf} object containing fault lines.}
 
 \item{id}{ID from fault.}
 

@@ -1,15 +1,21 @@
 Package: HAZDist
 Type: Package
-Title: Distance calculation function using Norman Abrahamson's HAZ fortran code
-Version: 0.1.7
-Author: Person Lin
-Maintainer: Person Lin <personlin@gmail.com>
-Depends: R (>= 3.1.0)
+Title: Distance Calculation Using Norman Abrahamson's HAZ Fortran Code
+Version: 0.2.0
+Authors@R: person("Person", "Lin", email = "personlin@gmail.com",
+    role = c("aut", "cre"))
+Depends: R (>= 4.1.0)
+Imports: sf
 SystemRequirements: GNU make
-Description: This package provide a set of R wrap function to call distance calculation function
-    from Norman Abrahamson's HAZ fortran code for using in GMPE.
+Description: Provides a set of R wrapper functions to call distance calculation
+    functions from Norman Abrahamson's HAZ Fortran code for use in ground motion
+    prediction equations (GMPEs). Computes source-to-site distance parameters
+    including Rjb, Rrup, ZTOR, Rx, Ry, and Ry0.
 License: GPL (>= 3)
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 6.0.1
-Suggests: GMPEhaz, rgdal
+LazyDataCompression: xz
+URL: https://github.com/personlin/HAZDist
+BugReports: https://github.com/personlin/HAZDist/issues
+RoxygenNote: 7.3.3
+Suggests: GMPEhaz
